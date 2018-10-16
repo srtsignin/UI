@@ -21,8 +21,9 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
-    "@srtsignin/courses": "0.0.1",
+    "@srtsignin/common": "0.0.8",
     "core-js": "^2.5.4",
+    "rosefire-node": "git+https://ada.csse.rose-hulman.edu/rosefire/node-sdk.git#2.1.0",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },

@@ -1,19 +1,12 @@
 {
   "name": "@srtsignin/rosefire-adapter",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
-  },
-  "dependencies": {
-    "@srtsignin/common": "0.0.3",
-    "rosefire-node": "git+https://ada.csse.rose-hulman.edu/rosefire/node-sdk.git#2.1.0"
-  },
+  "version": "0.0.3",
   "description": "Rosefire adapter for signing in",
   "main": "karma.conf.js",
   "devDependencies": {},
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build_publish": "ng build rosefire-adapter && cd ../../dist/rosefire-adapter && npm publish"
   },
   "repository": {
     "type": "git",
@@ -24,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/srtsignin/UI/issues"
   },
-  "homepage": "https://github.com/srtsignin/UI#readme"
+  "homepage": "https://github.com/srtsignin/UI#readme",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@srtsignin/common": "0.0.8",
+    "rosefire-node": "git+https://ada.csse.rose-hulman.edu/rosefire/node-sdk.git#2.1.0"
+  }
 }

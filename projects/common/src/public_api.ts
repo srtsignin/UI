@@ -6,4 +6,3 @@ export * from './lib/student-sign-in-request';
 export * from './lib/user-builder';
 export * from './lib/user';
 export * from './lib/course';
-export * from './lib/common.module';

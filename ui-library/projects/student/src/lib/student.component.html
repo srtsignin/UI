@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Session Information</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <h2>Courses<b class="course-error">*</b></h2>
+      <p class="course-error">{{courseMessage}}</p>
+      <mat-list>
+        <mat-list-item *ngFor="let studentcourse of studentCourses;let i = index;"  class="classSelection">
+          <mat-checkbox [(ngModel)]="studentCoursesChecked[i]" [ngModelOptions]="{standalone: true}">
+            {{studentcourse}}
+          </mat-checkbox>
+        </mat-list-item>
+      </mat-list>
+      <b>If the course you need tutoring for is not listed, please type it in below:</b>
+      <mat-list>
+        <mat-list-item *ngFor="let course of courses;let index = index;let last = last;" [ngClass]="{last: last}">
+          <mat-form-field class="course-input">
+            <input matInput 
+              [(ngModel)]="courses[index]" 
+              [ngModelOptions]="{standalone: true, updateOn: 'blur'}" 
+              [matAutocomplete]="auto" 
+              (input)="searchCourses($event.target.value)"
+              (click)="searchCourses()"
+              />
+          </mat-form-field>
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of options" [value]="option.department + option.number">
+              {{option.department}}{{option.number}} ({{option.name}})
+            </mat-option>
+          </mat-autocomplete>
+          <button mat-icon-button (click)="addCourseRow()" class='add-course'><b>+</b></button>
+        </mat-list-item>
+      </mat-list>
+      <h2>Problem Description</h2>
+      <textarea [(ngModel)]="description" cols="40" rows="5" md-select-on-focus [ngModelOptions]="{standalone: true}"></textarea>
+      <br>
+      <button mat-raised-button (click)="addStudent()" color="primary" class="signIn">Sign In Percopo Classroom</button>
+    </form>
+  </mat-card-content>
+</mat-card>

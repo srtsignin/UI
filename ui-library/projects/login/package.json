@@ -1,0 +1,31 @@
+{
+  "name": "@srtsignin/login",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "dependencies": {
+    "@angular/cdk": "^6.4.7",
+    "@angular/material": "^6.4.7",
+    "@srtsignin/roles-adapter": "0.0.1",
+    "@srtsignin/rosefire-adapter": "0.0.1",
+    "rxjs": "^6.3.3"
+  },
+  "description": "Login page for srtsignin",
+  "main": "karma.conf.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srtsignin/UI.git"
+  },
+  "author": "mholeman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srtsignin/UI/issues"
+  },
+  "homepage": "https://github.com/srtsignin/UI#readme"
+}

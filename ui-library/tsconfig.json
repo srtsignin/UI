@@ -1,0 +1,77 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {
+      "active-users": [
+        "@srtsignin//active-users"
+      ],
+      "active-users/*": [
+        "@srtsignin//active-users/*"
+      ],
+      "srt-common": [
+        "@srtsignin/common"
+      ],
+      "srt-common/*": [
+        "@srtsignin//srt-common/*"
+      ],
+      "courses": [
+        "dist/courses"
+      ],
+      "courses/*": [
+        "dist/courses/*"
+      ],
+      "roles-adapter": [
+        "dist/roles-adapter"
+      ],
+      "roles-adapter/*": [
+        "dist/roles-adapter/*"
+      ],
+      "rosefire-adapter": [
+        "dist/rosefire-adapter"
+      ],
+      "rosefire-adapter/*": [
+        "dist/rosefire-adapter/*"
+      ],
+      "navbar": [
+        "dist/navbar"
+      ],
+      "navbar/*": [
+        "dist/navbar/*"
+      ],
+      "login": [
+        "dist/login"
+      ],
+      "login/*": [
+        "dist/login/*"
+      ],
+      "student": [
+        "dist/student"
+      ],
+      "student/*": [
+        "dist/student/*"
+      ],
+      "tutor": [
+        "dist/tutor"
+      ],
+      "tutor/*": [
+        "dist/tutor/*"
+      ]
+    }
+  }
+}

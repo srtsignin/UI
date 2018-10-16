@@ -1,0 +1,25 @@
+/* div {
+  background-color: #800000;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right:10px
+} */
+
+/* #fullName {
+  color: white;
+  margin: 0;
+} */
+
+mat-toolbar {
+  height: auto;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+mat-form-field {
+  margin-right: 10px;
+}

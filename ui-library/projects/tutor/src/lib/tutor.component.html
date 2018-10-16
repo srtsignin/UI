@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-grid-list cols="5" rowHeight="5em">
+    <mat-grid-tile colspan="1">
+      <h1>Active Users</h1>
+    </mat-grid-tile>  
+    <mat-grid-tile colspan="3"></mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <button mat-flat-button (click)="clearActiveUsers()" class='clear'>Clear</button>
+      <button mat-flat-button (click)="refreshActiveUsers()"  class='refresh'>Refresh</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <br>
+  <mat-expansion-panel *ngFor="let user of users">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ user.name }}
+      </mat-panel-title>
+      <mat-panel-description [innerHtml]="user.courses.join(', ')"></mat-panel-description>
+    </mat-expansion-panel-header>
+    {{ user.problemDescription }}
+  </mat-expansion-panel>
+</mat-card>

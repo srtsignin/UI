@@ -1,0 +1,28 @@
+{
+  "name": "@srtsignin/navbar",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "dependencies": {
+    "@angular/material": "^6.4.7",
+    "@srtsignin/login": "0.0.1"
+  },
+  "description": "Navbar for srtsignin\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dcompoenent for srtsignin",
+  "main": "karma.conf.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srtsignin/UI.git"
+  },
+  "author": "mholeman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srtsignin/UI/issues"
+  },
+  "homepage": "https://github.com/srtsignin/UI#readme"
+}

@@ -59,3 +59,13 @@ typings/
 
 # next.js build output
 .next
+
+# VSCode
+.vscode/
+
+# UI Library
+ui-library/dist/
+ui-library/node_modules/
+
+# dependencies
+/node_modules

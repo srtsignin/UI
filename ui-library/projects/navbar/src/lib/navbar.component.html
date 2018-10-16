@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <p>SRT Sign In</p>
+  <span class="fill-space"></span>
+  <mat-form-field *ngIf="loggedIn">
+    <mat-select placeholder="Role">
+      <mat-option *ngFor="let role of roles" [value]="role.value">
+        {{role.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p *ngIf="loggedIn" id="fullName">{{fullName}}</p>
+</mat-toolbar>

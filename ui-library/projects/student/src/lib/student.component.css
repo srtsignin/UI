@@ -1,0 +1,41 @@
+mat-card {
+  background-color: white;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+mat-card-content {
+  margin: 0 2em 0 2em;
+}
+
+.course-input {
+  max-width: 250px;
+  width: 100%;
+}
+
+.course-error {
+  color: red;
+}
+
+.add-course {
+  visibility: hidden
+}
+
+.last .add-course {
+  visibility: visible;
+  background: #33cc33;
+  margin: 0 0 0 2em;
+}
+
+textarea {
+  margin: 0 0 2em 0;
+  max-width: 400px;
+}
+
+.signIn {
+  margin: 0 0 0 7em;
+}
+
+.classSelection {
+  max-width: 150px;
+}

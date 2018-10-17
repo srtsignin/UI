@@ -1,20 +1,19 @@
 {
   "name": "@srtsignin/tutor",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
-  },
-  "dependencies": {
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/material": "^6.4.7",
-    "@srtsignin/active-users": "0.0.3",
-    "@srtsignin/common": "0.0.3"
+    "@srtsignin/active-users": "^0.0.4",
+    "@srtsignin/common": "^0.0.8"
   },
   "description": "Tutor page for srtsignin",
   "main": "karma.conf.js",
   "devDependencies": {},
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build_publish": "ng build tutor && cd ../../dist/tutor && npm publish"
   },
   "repository": {
     "type": "git",

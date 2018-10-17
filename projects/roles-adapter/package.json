@@ -1,18 +1,17 @@
 {
   "name": "@srtsignin/roles-adapter",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
-  },
-  "dependencies": {
-    "@srtsignin/common": "0.0.3"
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@srtsignin/common": "^0.0.8"
   },
   "description": "Service that gets user roles",
   "main": "karma.conf.js",
   "devDependencies": {},
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build_publish": "ng build roles-adapter && cd ../../dist/roles-adapter && npm publish"
   },
   "repository": {
     "type": "git",

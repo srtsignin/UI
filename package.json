@@ -13,17 +13,24 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.1.0",
+    "@angular/cdk": "^6.4.7",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
     "@angular/core": "^6.1.0",
     "@angular/forms": "^6.1.0",
     "@angular/http": "^6.1.0",
+    "@angular/material": "^6.4.7",
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
-    "@srtsignin/common": "0.0.8",
+    "@srtsignin/active-users": "^0.0.4",
+    "@srtsignin/common": "^0.0.8",
+    "@srtsignin/courses": "^0.0.3",
+    "@srtsignin/login": "^0.0.4",
+    "@srtsignin/roles-adapter": "^0.0.3",
+    "@srtsignin/rosefire-adapter": "^0.0.5",
     "core-js": "^2.5.4",
-    "rosefire-node": "git+https://ada.csse.rose-hulman.edu/rosefire/node-sdk.git#2.1.0",
+    "rosefire": "git+https://ada.csse.rose-hulman.edu/rosefire/javascript-sdk.git#2.1.1",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },
@@ -47,9 +54,9 @@
     "ng-packagr": "^4.2.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
-    "tsickle": ">=0.29.0",
+    "typescript": "~2.9.2",
+    "tsickle": "0.31.0",
     "tslib": "^1.9.0",
-    "tslint": "~5.11.0",
-    "typescript": "~2.9.2"
+    "tslint": "~5.11.0"
   }
 }

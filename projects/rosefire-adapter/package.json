@@ -1,6 +1,6 @@
 {
   "name": "@srtsignin/rosefire-adapter",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "Rosefire adapter for signing in",
   "main": "karma.conf.js",
   "devDependencies": {},
@@ -21,7 +21,7 @@
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@srtsignin/common": "0.0.8",
-    "rosefire-node": "git+https://ada.csse.rose-hulman.edu/rosefire/node-sdk.git#2.1.0"
+    "@srtsignin/common": "^0.0.8",
+    "rosefire": "git+https://ada.csse.rose-hulman.edu/rosefire/javascript-sdk.git#2.1.1"
   }
 }

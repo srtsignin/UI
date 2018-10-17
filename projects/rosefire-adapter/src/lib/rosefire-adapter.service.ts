@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserBuilder } from '@srtsignin/common';
-import { Rosefire } from 'rosefire-node';
+import 'rosefire';
+declare var Rosefire;
 
 @Injectable()
 export class RosefireAdapterService {

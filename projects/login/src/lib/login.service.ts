@@ -45,15 +45,15 @@ export class LoginService {
     }
   }
 
-  public isTutor() : boolean  {
+  public isTutor(): boolean  {
     if (this.signedIn.getValue()) {
-      return this.user.roles.includes("Tutor");
+      return this.user.roles.includes('Tutor');
     } else {
       throw new Error('Attempted check isTutor() when not logged in.');
     }
   }
 
-  public getUser() : User {
+  public getUser(): User {
     if (this.signedIn.getValue()) {
       return this.user;
     } else {

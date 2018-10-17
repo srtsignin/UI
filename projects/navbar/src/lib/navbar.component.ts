@@ -8,9 +8,9 @@ import { LoginService } from '@srtsignin/login';
 })
 export class NavbarComponent implements OnInit {
 
-  protected loggedIn: boolean;
-  protected fullName: string;
-  protected roles = [
+  loggedIn: boolean;
+  fullName: string;
+  roles = [
     {value: 'admin', viewValue: 'Admin'},
     {value: 'staff', viewValue: 'Staff'},
     {value: 'tutor', viewValue: 'Tutor'},

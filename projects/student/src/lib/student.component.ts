@@ -13,13 +13,13 @@ import { StudentSignInRequest, Course } from '@srtsignin/common';
 })
 export class StudentComponent implements OnInit {
 
-  protected studentCourses: string[];
-  protected studentCoursesChecked: boolean[];
-  protected courses: string[];
-  
-  protected description: string;
-  protected courseMessage: string;
-  protected options: Course[] = [];
+  studentCourses: string[];
+  studentCoursesChecked: boolean[];
+  courses: string[];
+
+  description: string;
+  courseMessage: string;
+  options: Course[] = [];
 
   constructor(private loginService: LoginService,
     private activeUsersService: ActiveUsersService,
@@ -30,17 +30,17 @@ export class StudentComponent implements OnInit {
     this.studentCourses = [];
     this.studentCoursesChecked = [];
     this.courses = [''];
-    
+
     this.coursesService.getClasses(this.loginService.getUser()).subscribe(
       next => {
         this.studentCourses = next.data;
         this.studentCoursesChecked = new Array(next.data.length);
-        for (var i = 0; i < this.studentCoursesChecked.length; ++i) {
-          this.studentCoursesChecked[i] = false; 
+        for (let i = 0; i < this.studentCoursesChecked.length; ++i) {
+          this.studentCoursesChecked[i] = false;
         }
       },
       error => {
-        console.log(error)
+        console.log(error);
         this.studentCourses = [];
       }
     );
@@ -55,10 +55,10 @@ export class StudentComponent implements OnInit {
     studentSignInRequest.name = this.loginService.getFullName();
     studentSignInRequest.problemDescription = this.description;
     studentSignInRequest.courses = this.courses.filter((v) => v !== '');
-    
-    for (var i = 0; i < this.studentCoursesChecked.length; ++i) {
+
+    for (let i = 0; i < this.studentCoursesChecked.length; ++i) {
       if (this.studentCoursesChecked[i]) {
-        studentSignInRequest.courses.push(this.studentCourses[i]);
+        studentSignInRequest.courses.push(this.studentCourses[i].split(' ')[0]);
       }
     }
 
@@ -74,7 +74,7 @@ export class StudentComponent implements OnInit {
     }
   }
 
-  searchCourses(search: string) {
+  searchCourses(search?: string) {
     this.coursesService.getCourses(search).subscribe(
       next => {
         this.options = next.data;

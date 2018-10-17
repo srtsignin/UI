@@ -1,19 +1,18 @@
 {
   "name": "@srtsignin/navbar",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
-  },
-  "dependencies": {
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/material": "^6.4.7",
-    "@srtsignin/login": "0.0.1"
+    "@srtsignin/login": "^0.0.4"
   },
-  "description": "Navbar for srtsignin\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dcompoenent for srtsignin",
+  "description": "Navbar compoenent for srtsignin",
   "main": "karma.conf.js",
   "devDependencies": {},
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build_publish": "ng build navbar && cd ../../dist/navbar && npm publish"
   },
   "repository": {
     "type": "git",

@@ -6,19 +6,19 @@ import { User } from '@srtsignin/common';
 @Injectable()
 export class CoursesService {
 
-  activeURL = 'https://srtsign.in/api/active';
-  
+  activeURL = 'https://srtsign.in/api/v1/active';
+
   constructor(private http: HttpClient) { }
 
-  getCourses(search : string): Observable<any> {
+  getCourses(search: string): Observable<any> {
     const options = search ?
-      { params: new HttpParams().set('search', search) } : 
+      { params: new HttpParams().set('search', search) } :
       { params: new HttpParams().set('search', '')};
-    return this.http.get(this.activeURL + "/courses", options);
+    return this.http.get(this.activeURL + '/course', options);
   }
 
-  getClasses(user : User): Observable<any> {
-    return this.http.get(this.activeURL + "/classes", { 
+  getClasses(user: User): Observable<any> {
+    return this.http.get(this.activeURL + '/classes', {
       headers: new HttpHeaders({'StudentToken': user.token}) });
   }
 }

@@ -1,27 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { StudentSignInRequest } from '@srtsignin/common';
-@Injectable(
-  // {
-  // providedIn: 'root'
-// }
-)
+import { StudentSignInRequest, User } from '@srtsignin/common';
+
+@Injectable()
 export class ActiveUsersService {
 
-  activeUsersUrl = 'https://srtsign.in/api/active-users';
+  activeUsersUrl = 'https://srtsign.in/api/v1/active/activeUsers';
 
   constructor(private http: HttpClient) { }
 
-  getActiveUsers(): Observable<any> {
-    return this.http.get(this.activeUsersUrl);
+  getActiveUsers(tutor: User): Observable<any> {
+    return this.http.get(this.activeUsersUrl, {
+      params: new HttpParams().set('roomId', 'percopo'),
+      headers: new HttpHeaders().set('AuthToken', tutor.token)
+    });
   }
 
-  addUser (studentSignInRequest: StudentSignInRequest): Observable<any> {
-    return this.http.post(this.activeUsersUrl, JSON.stringify(studentSignInRequest));
+  addUser (student: User, studentSignInRequest: StudentSignInRequest): Observable<any> {
+    return this.http.post(this.activeUsersUrl, {
+      params: new HttpParams().set('roomId', 'percopo'),
+      headers: new HttpHeaders().set('AuthToken', student.token),
+      body: JSON.stringify(studentSignInRequest)
+    });
   }
 
-  clearActiveUsers(): Observable<any> {
-    return this.http.delete(this.activeUsersUrl);
+  deleteUser(tutor: User, student: User): Observable<any> {
+    return this.http.delete(this.activeUsersUrl, {
+      params: new HttpParams().set('roomId', 'percopo').set('username', student.username),
+      headers: new HttpHeaders().set('AuthToken', tutor.token)
+    });
   }
 }

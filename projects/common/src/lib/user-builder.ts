@@ -19,6 +19,11 @@ export class UserBuilder {
     return this;
   }
 
+  username(un: string): UserBuilder {
+    this.user.username = un;
+    return this;
+  }
+
   roles(r: string[]): UserBuilder {
     this.user.roles = r;
     return this;

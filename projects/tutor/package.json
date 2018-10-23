@@ -5,8 +5,8 @@
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/material": "^6.4.7",
-    "@srtsignin/active-users": "^0.0.4",
-    "@srtsignin/common": "^0.0.8"
+    "@srtsignin/active-users": "^0.0.8",
+    "@srtsignin/common": "^0.0.11"
   },
   "description": "Tutor page for srtsignin",
   "main": "karma.conf.js",

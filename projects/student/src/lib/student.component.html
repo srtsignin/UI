@@ -20,7 +20,7 @@
         <mat-list-item *ngFor="let course of courses;let index = index;let last = last;" [ngClass]="{last: last}">
           <mat-form-field class="course-input">
             <input matInput 
-              [(ngModel)]="courses[index]" 
+              [(ngModel)]="courses[index]"
               [ngModelOptions]="{standalone: true, updateOn: 'blur'}" 
               [matAutocomplete]="auto" 
               (input)="searchCourses($event.target.value)"
@@ -28,7 +28,7 @@
               />
           </mat-form-field>
           <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-            <mat-option *ngFor="let option of options" [value]="option.department + option.number">
+            <mat-option *ngFor="let option of options" [value]="option">
               {{option.department}}{{option.number}} ({{option.name}})
             </mat-option>
           </mat-autocomplete>

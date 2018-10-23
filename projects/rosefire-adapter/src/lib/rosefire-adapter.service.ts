@@ -14,7 +14,7 @@ export class RosefireAdapterService {
         if (err) {
           reject(err);
         }
-        resolve([new UserBuilder().token(user.token).fullname(user.name), user.token]);
+        resolve([new UserBuilder().token(user.token).fullname(user.name).username(user.username), user.token]);
       });
     });
   }

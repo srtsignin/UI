@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, PartialObserver  } from 'rxjs';
-import { getMatScrollStrategyAlreadyAttachedError } from '@angular/cdk/overlay/typings/scroll/scroll-strategy';
 import { RosefireAdapterService } from '@srtsignin/rosefire-adapter';
 import { UserBuilder, User } from '@srtsignin/common';
 import { RolesAdapterService } from '@srtsignin/roles-adapter';
@@ -24,7 +23,11 @@ export class LoginService {
     }).then((userBuilder: UserBuilder) => {
       this.user = userBuilder.build();
       this.signedIn.next(true);
-      this.router.navigate(['/student']);
+      if (this.user.roles.includes('Tutor')) {
+        this.router.navigate(['/tutor']);
+      } else {
+        this.router.navigate(['/student']);
+      }
     });
   }
 

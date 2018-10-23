@@ -3,8 +3,8 @@
   <span class="fill-space"></span>
   <mat-form-field *ngIf="loggedIn">
     <mat-select placeholder="Role">
-      <mat-option *ngFor="let role of roles" [value]="role.value">
-        {{role.viewValue}}
+      <mat-option *ngFor="let role of roles" [value]="role">
+        {{role}}
       </mat-option>
     </mat-select>
   </mat-form-field>

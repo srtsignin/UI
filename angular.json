@@ -23,9 +23,12 @@
               "src/assets"
             ],
             "styles": [
+              "src/theme.scss",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/rosefire/dist/js/rosefire.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -429,6 +432,41 @@
             "tsConfig": [
               "projects/tutor/tsconfig.lib.json",
               "projects/tutor/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "api": {
+      "root": "projects/api",
+      "sourceRoot": "projects/api/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/api/tsconfig.lib.json",
+            "project": "projects/api/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/api/src/test.ts",
+            "tsConfig": "projects/api/tsconfig.spec.json",
+            "karmaConfig": "projects/api/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/api/tsconfig.lib.json",
+              "projects/api/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

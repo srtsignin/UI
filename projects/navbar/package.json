@@ -1,11 +1,11 @@
 {
   "name": "@srtsignin/navbar",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/material": "^6.4.7",
-    "@srtsignin/login": "^0.0.4"
+    "@srtsignin/login": "^0.0.5"
   },
   "description": "Navbar compoenent for srtsignin",
   "main": "karma.conf.js",

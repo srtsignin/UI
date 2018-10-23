@@ -5,18 +5,19 @@
     </mat-grid-tile>  
     <mat-grid-tile colspan="3"></mat-grid-tile>
     <mat-grid-tile colspan="1">
-      <button mat-flat-button (click)="clearActiveUsers()" class='clear'>Clear</button>
-      <button mat-flat-button (click)="refreshActiveUsers()"  class='refresh'>Refresh</button>
+      <button mat-flat-button (click)="refreshActiveUsers()">Refresh</button>
     </mat-grid-tile>
   </mat-grid-list>
   <br>
-  <mat-expansion-panel *ngFor="let user of users">
+  <mat-expansion-panel *ngFor="let student of students">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ user.name }}
+        {{ student.name }}
       </mat-panel-title>
-      <mat-panel-description [innerHtml]="user.courses.join(', ')"></mat-panel-description>
+      <mat-panel-description [innerHtml]="student.courses"></mat-panel-description>
     </mat-expansion-panel-header>
-    {{ user.problemDescription }}
+    {{ student.problemDescription }}
+    <!-- (click)="checkoffUser(student)" -->
+    <button mat-flat-button  class="checkoff">Check Off</button>
   </mat-expansion-panel>
 </mat-card>

@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '@srtsignin/login';
 import { ActiveUsersService } from '@srtsignin/active-users';
 import { CoursesService } from '@srtsignin/courses';
-import { StudentSignInRequest, Course } from '@srtsignin/common';
+import { StudentSignInRequest, Course, User } from '@srtsignin/common';
 
 @Component({
   selector: 'srtsignin-student',
@@ -13,9 +13,11 @@ import { StudentSignInRequest, Course } from '@srtsignin/common';
 })
 export class StudentComponent implements OnInit {
 
-  studentCourses: string[];
+  student: User;
+
+  studentCourses: Course[];
   studentCoursesChecked: boolean[];
-  courses: string[];
+  courses: Course[];
 
   description: string;
   courseMessage: string;
@@ -29,9 +31,11 @@ export class StudentComponent implements OnInit {
   ngOnInit() {
     this.studentCourses = [];
     this.studentCoursesChecked = [];
-    this.courses = [''];
+    this.courses = [new Course('', '', '')];
 
-    this.coursesService.getClasses(this.loginService.getUser()).subscribe(
+    this.student = this.loginService.getUser();
+
+    this.coursesService.getClasses(this.student).subscribe(
       next => {
         this.studentCourses = next.data;
         this.studentCoursesChecked = new Array(next.data.length);
@@ -47,23 +51,22 @@ export class StudentComponent implements OnInit {
   }
 
   addCourseRow() {
-    this.courses.push('');
+    this.courses.push(new Course('', '', ''));
   }
 
   addStudent() {
     const studentSignInRequest = new StudentSignInRequest();
-    studentSignInRequest.name = this.loginService.getFullName();
     studentSignInRequest.problemDescription = this.description;
-    studentSignInRequest.courses = this.courses.filter((v) => v !== '');
+    studentSignInRequest.courses = this.courses.filter((v) => v.number !== '');
 
     for (let i = 0; i < this.studentCoursesChecked.length; ++i) {
       if (this.studentCoursesChecked[i]) {
-        studentSignInRequest.courses.push(this.studentCourses[i].split(' ')[0]);
+        studentSignInRequest.courses.push(this.studentCourses[i]);
       }
     }
 
     if (studentSignInRequest.courses.length > 0) {
-      this.activeUsersService.addUser(studentSignInRequest).subscribe(
+      this.activeUsersService.addUser(this.student, studentSignInRequest).subscribe(
         next => {
           this.router.navigate(['/login']);
         },
@@ -75,9 +78,11 @@ export class StudentComponent implements OnInit {
   }
 
   searchCourses(search?: string) {
+    this.options = [];
     this.coursesService.getCourses(search).subscribe(
       next => {
-        this.options = next.data;
+        const data = next.data;
+        this.options.push(new Course(data.name, data.departent, data.number));
       },
       error => console.log(error)
     );

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import 'rosefire';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ui-library';
+  title = 'web-app';
 }

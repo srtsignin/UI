@@ -1,10 +1,10 @@
 {
   "name": "@srtsignin/courses",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@srtsignin/common": "0.0.8"
+    "@srtsignin/common": "^0.0.9"
   },
   "main": "karma.conf.js",
   "devDependencies": {},

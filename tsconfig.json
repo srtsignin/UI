@@ -71,6 +71,12 @@
       ],
       "tutor/*": [
         "dist/tutor/*"
+      ],
+      "api": [
+        "dist/api"
+      ],
+      "api/*": [
+        "dist/api/*"
       ]
     }
   }

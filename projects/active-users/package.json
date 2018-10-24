@@ -1,10 +1,11 @@
 {
   "name": "@srtsignin/active-users",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@srtsignin/common": "^0.0.9"
+    "@srtsignin/common": "^0.0.9",
+    "@srtsignin/api": "^0.0.1"
   },
   "description": "Service to get, add, and remove users",
   "main": "karma.conf.js",
@@ -17,9 +18,5 @@
     "url": "https://github.com/srtsignin/UI.git"
   },
   "author": "mholeman",
-  "license": "ISC",
-  "devDependencies": {},
-  "dependencies": {
-    "@srtsignin/common": "0.0.9"
-  }
+  "license": "ISC"
 }

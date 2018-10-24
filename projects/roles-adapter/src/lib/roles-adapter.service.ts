@@ -1,12 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RolesResponse, UserBuilder } from '@srtsignin/common';
+import { API_URL } from '@srtsignin/api';
 
 @Injectable()
 export class RolesAdapterService {
 
-  constructor(private http: HttpClient) { }
+  private API_URL;
+  private rolesUrl = '/role';
+
+  constructor(private http: HttpClient, @Inject(API_URL) url: string) {
+    this.API_URL = url;
+  }
 
   public populateRoles(userBuilder: UserBuilder, token: string): Promise<UserBuilder> {
     return new Promise((resolve, reject) => {
@@ -17,7 +23,7 @@ export class RolesAdapterService {
   }
 
   private getRoles(token: string): Observable<RolesResponse> {
-    return this.http.get<RolesResponse>('https://srtsign.in/api/v1/role', {
+    return this.http.get<RolesResponse>(this.API_URL + this.rolesUrl, {
       headers: new HttpHeaders({'AuthToken': token})
     });
   }

@@ -1,8 +1,24 @@
 {
-  "name": "api",
+  "name": "@srtsignin/api",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
-  }
+  },
+  "description": "Takes argument for api url to use in services",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "test",
+    "build_publish": "ng build api && cd ../../dist/api && npm publish --access=public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srtsignin/UI.git"
+  },
+  "author": "mholeman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srtsignin/UI/issues"
+  },
+  "homepage": "https://github.com/srtsignin/UI#readme"
 }

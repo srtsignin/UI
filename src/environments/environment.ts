@@ -6,7 +6,7 @@ export const environment = {
   name: 'dev',
   production: false,
   settings: {
-    backend: 'http://srtsign.in/'
+    backend: 'https://srtsign.in/api'
   }
 };
 

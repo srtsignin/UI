@@ -24,7 +24,7 @@ export class RolesAdapterService {
 
   private getRoles(token: string): Observable<RolesResponse> {
     return this.http.get<RolesResponse>(this.API_URL + this.rolesUrl, {
-      headers: new HttpHeaders({'AuthToken': token})
+      headers: new HttpHeaders({'RosefireToken': token})
     });
   }
 
